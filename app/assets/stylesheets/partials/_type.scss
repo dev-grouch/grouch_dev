@@ -1,0 +1,30 @@
+$marco-family: 'marco', serif;
+$fat-frank-family: 'fatfrank', sans-serif;
+$font-weight-normal: 400;
+$font-weight-heavy: 700;
+$font-style-normal: normal;
+$font-style-italic: normal;
+
+$base-font-size: 16px;
+
+em {
+  font-family: $marco-family;
+  font-weight: $font-weight-normal;
+  font-style: $font-style-italic;
+}
+
+strong {
+  font-family: $marco-family;
+  font-weight: $font-weight-heavy;
+  font-style: $font-style-normal;
+}
+
+em,
+strong {
+  strong,
+  em {
+    font-family: $marco-family;
+    font-weight: $font-weight-heavy;
+    font-style: $font-style-italic;
+  }
+}
