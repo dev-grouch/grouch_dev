@@ -14,7 +14,7 @@ class ContactForm
 
   def call
     if valid?
-      ContactMailer.contact_email(attributes).deliver_later
+      ContactMailer.contact_email(attributes).deliver_now
       true
     else
       false
