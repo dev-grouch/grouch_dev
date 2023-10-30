@@ -1,0 +1,45 @@
+.primary {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: grid;
+  margin: $super-height 0 0;
+  height: $header-height;
+  grid-template-columns: 30vw 50vw;
+  align-items: center;
+}
+
+.super {
+  content: '';
+  width: 100%;
+  height: $super-height;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  backdrop-filter: blur(3.5px);
+}
+
+.logo {
+  display: grid;
+  align-items: center;
+  height: 100%;
+  color: $white;
+  background-color: $black;
+  padding: 0 $padding;
+}
+
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  justify-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.block {
+  width: 100%;
+  height: 100%;
+}

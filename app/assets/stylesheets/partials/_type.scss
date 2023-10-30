@@ -1,11 +1,40 @@
 $marco-family: 'marco', serif;
 $fat-frank-family: 'fatfrank', sans-serif;
+$scala-family: 'ff-scala-sans-pro', sans-serif;
 $font-weight-normal: 400;
 $font-weight-heavy: 700;
 $font-style-normal: normal;
-$font-style-italic: normal;
+$font-style-italic: italic;
 
 $base-font-size: 16px;
+
+$h1-font-size: 4vmin;
+
+h1 {
+  font-family: $marco-family;
+  font-size: $h1-font-size;
+  font-weight: $font-weight-heavy;
+  line-height: 1.2;
+}
+
+h2 {
+  font-family: $marco-family;
+  font-size: $h1-font-size * 0.75;
+  font-weight: $font-weight-heavy;
+  line-height: 1.2;
+}
+
+p {
+  font-size: $base-font-size * 1.125;
+  line-height: 1.35;
+  margin: 0;
+
+  & + &,
+  h1 + &,
+  h2 + & {
+    margin-top: 1em;
+  }
+}
 
 em {
   font-family: $marco-family;

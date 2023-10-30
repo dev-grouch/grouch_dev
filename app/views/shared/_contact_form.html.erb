@@ -1,32 +1,29 @@
-<%= form_with model: @contact_form, url: contact_index_path, local: true do |form| %>
-  <% if @contact_form.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@contact_form.errors.count, "error") %> prohibited this contact form from being saved:</h2>
-
-      <ul>
-        <% @contact_form.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<div class="form__container">
+  <%= form_with model: @contact_form, url: contact_index_path, local: true do |form| %>
+    <% if @contact_form.errors.any? %>
+      <div class="form__errors" id="error_explanation">
+        <h2><%= pluralize(@contact_form.errors.count, "error") %> prohibited this contact form from being saved:</h2>
+        <ul>
+          <% @contact_form.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="form__field">
+      <%= form.label :name, class: "label form__label" %>
+      <%= form.text_field :name, class: "input input--text form__input--text" %>
+    </div>
+    <div class="form__field">
+      <%= form.label :email, class: "label form__label" %>
+      <%= form.text_field :email, class: "input input--text form__input--text" %>
+    </div>
+    <div class="form__field">
+      <%= form.label :message, class: "label form__label" %>
+      <%= form.text_area :message, class: "input input--textarea form__input--textarea" %>
+    </div>
+    <div class="form__actions">
+      <%= form.submit "Submit", class: "button button--primary form__button" %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :contact_form_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :contact_form_email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :message %>
-    <%= form.text_area :message, id: :contact_form_message %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Submit" %>
-  </div>
-<% end %>
+</div>
