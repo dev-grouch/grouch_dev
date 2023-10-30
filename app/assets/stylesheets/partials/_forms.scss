@@ -1,67 +1,83 @@
-form {
-  background-color: #fff;
-  border: 1px solid #e1e1e1;
-  border-radius: 5px;
-  padding: 1.25em;
-  margin-top: 1.25em;
+@use 'sass:color';
+
+.form {
+  &__container {
+    background-color: $blue;
+    padding: 1.25em;
+  }
+
+  &__field {
+    & + & {
+      margin-top: 1.25em;
+    }
+  }
+
+  &__label {
+  }
+  &__input {
+  }
+  &__actions {
+    margin-top: 1.25em;
+  }
+  &__errors {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    padding: 1.25em;
+    margin-bottom: 1.25em;
+
+    h2 {
+      color: #721c24;
+      margin: 0 0 10px 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        color: #721c24;
+      }
+    }
+  }
 }
 
-.field {
-  margin-bottom: 1.25em;
-}
-
-.field label {
-  font-size: 1.125em;
+.label {
   display: block;
-  margin-bottom: 5px;
-}
-
-.field input[type='text'],
-.field textarea {
-  width: calc(100% - 1.25em);
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #e1e1e1;
-  border-radius: 5px;
-}
-
-.field textarea {
-  height: 150px;
-}
-
-.actions input[type='submit'] {
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-  padding: 10px 1.25em;
   font-size: 1.125em;
-  border-radius: 5px;
-  cursor: pointer;
+  color: $white;
+  font-weight: $font-weight-heavy;
+  margin-bottom: 0.4em;
 }
 
-.actions input[type='submit']:hover {
-  background-color: #45a049;
+.input {
+  &--text {
+    width: calc(100% - 1.25em);
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #e1e1e1;
+  }
+
+  &--textarea {
+    width: calc(100% - 1.25em);
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #e1e1e1;
+  }
 }
 
-#error_explanation {
-  background-color: #f8d7da;
-  border: 1px solid #f5c6cb;
-  border-radius: 5px;
-  padding: 1.25em;
-  margin-bottom: 1.25em;
-}
+.button {
+  &--primary {
+    background-color: $green;
+    color: #fff;
+    border: none;
+    padding: 10px 1.25em;
+    font-size: 1.125em;
+    cursor: pointer;
 
-#error_explanation h2 {
-  color: #721c24;
-  margin: 0 0 10px 0;
-}
-
-#error_explanation ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#error_explanation li {
-  color: #721c24;
+    &:hover {
+      background-color: color.adjust($green, $blackness: 8%);
+    }
+  }
 }

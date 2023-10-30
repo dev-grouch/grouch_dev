@@ -1,6 +1,22 @@
 body {
-  font-family: $marco-family;
+  padding: 0;
+  margin: 0;
+  font-family: $scala-family;
   font-weight: $font-weight-normal;
   font-style: $font-style-normal;
   font-size: $base-font-size;
+}
+
+main {
+  margin-top: calc($super-height + $header-height + $padding);
+  padding: 0 0 $padding;
+}
+
+.container {
+  max-width: calc(80vw - #{$padding * 2});
+  margin: 0 0 0 $padding;
+
+  & + & {
+    margin-top: $padding;
+  }
 }

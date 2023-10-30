@@ -10,7 +10,7 @@ class ContactController < ApplicationController
       flash[:notice] = "Thank you for reaching out! We will be in touch soon."
       redirect_to root_path
     else
-      render :new
+      redirect_back_or_to root_path
     end
   end
 

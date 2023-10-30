@@ -1,0 +1,29 @@
+$white: #fff;
+$black: #000;
+$yellow: #dbdb4f;
+$red: #993434;
+$purple: rebeccapurple;
+$green: #439934;
+$blue: #346499;
+
+.bg {
+  &--yellow {
+    background-color: $yellow;
+  }
+
+  &--red {
+    background-color: $red;
+  }
+
+  &--purple {
+    background-color: $purple;
+  }
+
+  &--green {
+    background-color: $green;
+  }
+
+  &--blue {
+    background-color: $blue;
+  }
+}
