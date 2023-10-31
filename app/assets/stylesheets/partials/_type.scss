@@ -22,12 +22,34 @@ h2 {
   font-size: $h1-font-size * 0.75;
   font-weight: $font-weight-heavy;
   line-height: 1.2;
+  margin: 0 0 0.5em 0;
+
+  & + &,
+  h1 + &,
+  h3 + &,
+  p + & {
+    margin-top: 1em;
+  }
+}
+
+h3 {
+  font-family: $marco-family;
+  font-size: $h1-font-size * 0.5;
+  font-weight: $font-weight-heavy;
+  line-height: 1.2;
+  margin: 0 0 0.5em 0;
+
+  & + &,
+  h1 + &,
+  h2 + &,
+  p + & {
+    margin-top: 1em;
+  }
 }
 
 p {
   font-size: $base-font-size * 1.125;
   line-height: 1.35;
-  margin: 0;
 
   & + &,
   h1 + &,

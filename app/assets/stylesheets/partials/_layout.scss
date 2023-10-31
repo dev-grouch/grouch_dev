@@ -8,8 +8,7 @@ body {
 }
 
 main {
-  margin-top: calc($super-height + $header-height + $padding);
-  padding: 0 0 $padding;
+  padding: calc($super-height + $header-height + $padding) 0 $padding;
 }
 
 .container {

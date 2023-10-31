@@ -27,3 +27,13 @@ $blue: #346499;
     background-color: $blue;
   }
 }
+
+.color {
+  &--white {
+    color: $white;
+  }
+
+  &--black {
+    color: $black;
+  }
+}
