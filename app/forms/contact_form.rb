@@ -14,20 +14,10 @@ class ContactForm
 
   def call
     if valid?
-      ContactMailer.contact_email(attributes).deliver_now
+      ContactMailerService.new(attributes).call
       true
     else
       false
     end
-  end
-
-  private
-
-  def attributes
-    {
-      name: name,
-      email: email,
-      message: message,
-    }
   end
 end
