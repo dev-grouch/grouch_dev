@@ -20,4 +20,12 @@ class ContactForm
       false
     end
   end
+
+  def attributes
+    {
+      name: name,
+      email: email,
+      message: message
+    }
+  end
 end
