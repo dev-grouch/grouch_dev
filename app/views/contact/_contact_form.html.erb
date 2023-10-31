@@ -1,4 +1,4 @@
-<div class="form__container <%= feedback if defined?(feedback) %>" id="<%= dom_id(contact_form) %>">
+<%= tag.div id: dom_id(contact_form), class: "form__container", data: { stream_exit_class: "success" } do %>
   <%= form_with model: contact_form, url: contact_index_path, local: true do |form| %>
     <% if contact_form.errors.any? %>
       <div class="form__errors" id="error_explanation">
@@ -26,4 +26,8 @@
       <%= form.submit "Submit", class: "button button--primary form__button" %>
     </div>
   <% end %>
-</div>
+  <div class="thanks">
+    <h2>Thanks for reaching out.</h2>
+    <p>The robuts are delivering the mail, and we'll be in touch soon!</p>
+  </div>
+<% end %>

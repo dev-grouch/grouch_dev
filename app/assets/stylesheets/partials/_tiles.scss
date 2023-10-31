@@ -1,0 +1,47 @@
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+
+.tile {
+  position: relative;
+  padding: 0 0 0 1rem;
+  border-left-width: 1.1rem;
+  border-left-style: solid;
+  padding-bottom: 4em;
+
+  h3 {
+    font-size: 1.25em;
+  }
+
+  p {
+    font-size: 0.9em;
+  }
+
+  .icon {
+    font-size: 2em;
+    position: absolute;
+    bottom: 0;
+  }
+
+  &--yellow {
+    border-left-color: $yellow;
+  }
+
+  &--blue {
+    border-left-color: $blue;
+  }
+
+  &--green {
+    border-left-color: $green;
+  }
+
+  &--purple {
+    border-left-color: $purple;
+  }
+
+  &--red {
+    border-left-color: $red;
+  }
+}
