@@ -1,3 +1,19 @@
+$breakpoints: (
+  'small': 480px,
+  'medium': 768px,
+  'large': 1024px,
+);
+
+@mixin breakpoint($name) {
+  @if map-has-key($breakpoints, $name) {
+    @media (min-width: map-get($breakpoints, $name)) {
+      @content;
+    }
+  } @else {
+    @warn "No breakpoint configured for #{$name}";
+  }
+}
+
 $padding: 4vw;
 $header-height: 12vmin;
 $super-height: 6em;

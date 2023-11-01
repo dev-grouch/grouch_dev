@@ -4,7 +4,7 @@ body {
   font-family: $scala-family;
   font-weight: $font-weight-normal;
   font-style: $font-style-normal;
-  font-size: $base-font-size;
+  font-size: clamp($base-font-size, 2vw, 1.5rem);
 }
 
 main {

@@ -2,8 +2,6 @@ class ContactController < ApplicationController
   def create
     @contact_form = ContactForm.new(contact_form_params)
 
-    puts "Params: #{contact_form_params.inspect}"
-
     if @contact_form.call
       @feedback = "success"
     else
