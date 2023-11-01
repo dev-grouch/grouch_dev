@@ -2,11 +2,7 @@ class ContactController < ApplicationController
   def create
     @contact_form = ContactForm.new(contact_form_params)
 
-    if @contact_form.call
-      @feedback = "success"
-    else
-      @feedback = "invalid"
-    end
+    @contact_form.call
   end
 
   private
