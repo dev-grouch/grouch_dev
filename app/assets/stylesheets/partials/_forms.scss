@@ -74,29 +74,6 @@ $transition-speed: 0.25s;
   &__actions {
     margin-top: 1.25em;
   }
-
-  &__errors {
-    background-color: #f8d7da;
-    border: 1px solid #f5c6cb;
-    border-radius: 5px;
-    padding: 1.25em;
-    margin-bottom: 1.25em;
-
-    h2 {
-      color: #721c24;
-      margin: 0 0 10px 0;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-
-      li {
-        color: #721c24;
-      }
-    }
-  }
 }
 
 .label {
