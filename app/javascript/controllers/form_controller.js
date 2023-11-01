@@ -59,6 +59,10 @@ export default class extends Controller {
   }
 
   showErrorState = (field) => {
+    const errorPresent = field.parentNode.querySelector('.form__error')
+
+    if (errorPresent) return
+
     const errorMessage = field.dataset.errorMessage
     const errorElement = document.createElement('div')
     errorElement.classList.add('form__error')
