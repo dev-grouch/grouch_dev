@@ -1,9 +1,9 @@
 class ContactMailerService
-  def initialize(attributes)
-    @attributes = attributes
+  def initialize(contact_form)
+    @contact_form = contact_form
   end
 
   def call
-    ContactMailer.contact_email(@attributes).deliver_now
+    ContactMailer.contact_email(@contact_form.attributes).deliver_now
   end
 end

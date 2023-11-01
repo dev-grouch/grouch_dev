@@ -1,7 +1,12 @@
 .tiles {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1em;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2em;
+
+  @include breakpoint(large) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5em;
+  }
 }
 
 .tile {
@@ -11,12 +16,8 @@
   border-left-style: solid;
   padding-bottom: 4em;
 
-  h3 {
-    font-size: 1.25em;
-  }
-
   p {
-    font-size: 0.9em;
+    font-size: clamp($base-font-size * 0.75, 2vw, 1.2rem);
   }
 
   .icon {
