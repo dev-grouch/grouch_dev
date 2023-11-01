@@ -6,9 +6,6 @@ ruby "3.1.2"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.8"
 
-# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails"
-
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
@@ -46,6 +43,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 gem "importmap-rails", "~> 1.2"
+gem "propshaft"
 
 # Use Sass to process CSS
 # gem "sassc-rails"

@@ -1,4 +1,5 @@
 import { Controller } from '@hotwired/stimulus'
+import debounce from 'lodash/debounce'
 
 export default class extends Controller {
   static targets = ['form']
@@ -19,7 +20,7 @@ export default class extends Controller {
 
   attachChangeListeners() {
     this.formFields.forEach((input) => {
-      input.addEventListener('change', this.onChange)
+      input.addEventListener('change blur', this.onChange)
     })
   }
 
