@@ -56,9 +56,19 @@ $transition-speed: 0.25s;
   }
 
   &__field {
+    position: relative;
     & + & {
-      margin-top: 1.25em;
+      margin-top: 1.75em;
     }
+  }
+
+  &__error {
+    position: absolute;
+    bottom: -1.35em;
+    left: 0;
+    color: $white;
+    font-size: 0.825em;
+    margin-top: 0.4em;
   }
 
   &__actions {
@@ -102,14 +112,18 @@ $transition-speed: 0.25s;
     width: 100%;
     padding: 0.714em;
     font-size: 1.144em;
-    border: 1px solid #e1e1e1;
+    border: 3px solid $white;
   }
 
   &--textarea {
     width: 100%;
     padding: 0.714em;
     font-size: 1.144em;
-    border: 0 none;
+    border: 3px solid $white;
+  }
+
+  &--error {
+    border-color: $red;
   }
 }
 
@@ -124,6 +138,12 @@ $transition-speed: 0.25s;
 
     &:hover {
       background-color: color.adjust($green, $blackness: 8%);
+    }
+
+    // disabled styles
+    &[disabled] {
+      background-color: color.adjust($green, $blackness: 8%);
+      cursor: not-allowed;
     }
   }
 }

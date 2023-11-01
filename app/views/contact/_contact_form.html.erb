@@ -1,5 +1,9 @@
 <%= tag.div id: dom_id(contact_form), class: "form__container", data: { stream_exit_class: "success" } do %>
-  <%= form_with model: contact_form, url: contact_index_path, local: true do |form| %>
+  <%= form_with model: contact_form, url: contact_index_path, html: { novalidate: true }, data: {
+        controller: "form",
+        form_target: "form",
+        action: "ajax:beforeSend->form#submitForm"
+      } do |form| %>
     <% if contact_form.errors.any? %>
       <div class="form__errors">
         <h2><%= pluralize(contact_form.errors.count, "error") %> kept this form from being sent:</h2>
@@ -12,18 +16,18 @@
     <% end %>
     <div class="form__field">
       <%= form.label :name, class: "label form__label" %>
-      <%= form.text_field :name, class: "input input--text form__input--text" %>
+      <%= form.text_field :name, class: "input input--text form__input--text", required: true, data: { error_message: "required" } %>
     </div>
     <div class="form__field">
       <%= form.label :email, class: "label form__label" %>
-      <%= form.text_field :email, class: "input input--text form__input--text" %>
+      <%= form.email_field :email, class: "input input--text form__input--text", required: true, data: { error_message: "We need a valid email here :)" } %>
     </div>
     <div class="form__field">
       <%= form.label :message, class: "label form__label" %>
-      <%= form.text_area :message, class: "input input--textarea form__input--textarea" %>
+      <%= form.text_area :message, class: "input input--textarea form__input--textarea", required: true, data: { error_message: "required" } %>
     </div>
     <div class="form__actions">
-      <%= form.submit "Submit", class: "button button--primary form__button" %>
+      <%= form.submit "Submit", class: "button button--primary form__button", disabled: true %>
     </div>
   <% end %>
   <div class="thanks">

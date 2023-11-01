@@ -7,11 +7,11 @@
     <%= csp_meta_tag %>
     <link rel="stylesheet" href="https://use.typekit.net/zvg3tgv.css">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/manifest.webmanifest">
+    <%= javascript_importmap_tags %>
   </head>
   <body>
     <%= render partial: "shared/header" %>
