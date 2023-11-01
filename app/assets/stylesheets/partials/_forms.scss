@@ -1,6 +1,15 @@
 @use 'sass:color';
 $transition-speed: 0.25s;
 
+@mixin form-field-input {
+  display: block;
+  width: 100%;
+  padding: 0.3em;
+  font-size: clamp(0.95em, 2vw, 1.3rem);
+  font-family: $scala-family;
+  border: 3px solid $white;
+}
+
 .form {
   &__container {
     background-color: $blue;
@@ -26,14 +35,20 @@ $transition-speed: 0.25s;
       align-items: center;
       justify-items: center;
       color: #fff;
-      font-size: 1.5em;
+      font-size: clamp(1.2em, 4vw, 2.25rem);
       font-weight: $font-weight-heavy;
       text-align: center;
       padding: 2em;
       opacity: 0;
       transform: translateY(100%);
+      box-shadow: inset 0 0 0px 0px color.adjust($green, $lightness: 8%);
       transition: transform $transition-speed ease-in-out,
-        opacity $transition-speed ease-in-out;
+        opacity $transition-speed ease-in-out,
+        box-shadow $transition-speed ease-out calc($transition-speed / 2);
+
+      h2 {
+        font-size: clamp(1.39375em, 4vw, 2.45rem);
+      }
     }
 
     &.success {
@@ -47,6 +62,7 @@ $transition-speed: 0.25s;
       .thanks {
         opacity: 1;
         transform: translateY(0);
+        box-shadow: inset 7px 7px 0px 0px color.adjust($green, $lightness: 8%);
       }
     }
 
@@ -86,21 +102,20 @@ $transition-speed: 0.25s;
 
 .input {
   &--text {
-    width: 100%;
-    padding: 0.714em;
-    font-size: 1.144em;
-    border: 3px solid $white;
+    @include form-field-input;
   }
 
   &--textarea {
-    width: 100%;
-    padding: 0.714em;
-    font-size: 1.144em;
-    border: 3px solid $white;
+    @include form-field-input;
+    height: 20vmin;
   }
 
   &--error {
     border-color: $red;
+
+    &:focus {
+      outline-color: color.adjust($red, $blackness: 8%);
+    }
   }
 }
 
@@ -112,14 +127,22 @@ $transition-speed: 0.25s;
     padding: 10px 1.25em;
     font-size: 1.125em;
     cursor: pointer;
+    box-shadow: -2px -2px 0px 0px color.adjust($green, $lightness: 8%);
 
     &:hover {
       background-color: color.adjust($green, $blackness: 8%);
     }
 
+    &:active {
+      background-color: color.adjust($green, $blackness: 12%);
+      box-shadow: -2px -2px 0px 0px color.adjust($green, $lightness: 2%);
+    }
+
     // disabled styles
     &[disabled] {
-      background-color: color.adjust($green, $blackness: 8%);
+      background-color: color.adjust($green, $blackness: 19%);
+      opacity: 0.6;
+      box-shadow: -2px -2px 0px 0px $green;
       cursor: not-allowed;
     }
   }
