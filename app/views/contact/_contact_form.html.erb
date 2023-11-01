@@ -1,8 +1,7 @@
 <%= tag.div id: dom_id(contact_form), class: "form__container", data: { stream_exit_class: "success" } do %>
   <%= form_with model: contact_form, url: contact_index_path, html: { novalidate: true }, data: {
         controller: "form",
-        form_target: "form",
-        action: "ajax:beforeSend->form#submitForm"
+        form_target: "form"
       } do |form| %>
     <div class="form__field">
       <%= form.label :name, class: "label form__label" %>

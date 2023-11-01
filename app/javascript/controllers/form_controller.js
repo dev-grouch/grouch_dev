@@ -1,5 +1,4 @@
 import { Controller } from '@hotwired/stimulus'
-import debounce from 'lodash/debounce'
 
 export default class extends Controller {
   static targets = ['form']
@@ -18,9 +17,12 @@ export default class extends Controller {
     return this.formTarget.querySelector('input[type="submit"]')
   }
 
+  // TODO: refactor me
   attachChangeListeners() {
     this.formFields.forEach((input) => {
-      input.addEventListener('change blur', this.onChange)
+      input.addEventListener('keyup', this.onChange)
+      input.addEventListener('change', this.onChange)
+      input.addEventListener('focus', this.onChange)
     })
   }
 
@@ -37,18 +39,18 @@ export default class extends Controller {
     return emailRegex.test(email)
   }
 
-  validField = (field) => {
+  validField = (field, showError = false) => {
     if (!field.required) return true
 
     if (field.type === 'email' && !this.validEmail(field.value)) {
       this.disableSubmitButton()
-      this.showErrorMessage(field)
+      showError && this.showErrorState(field)
       return false
     }
 
     if (!field.validity.valid) {
       this.disableSubmitButton()
-      this.showErrorMessage(field)
+      showError && this.showErrorState(field)
       return false
     }
 
@@ -56,7 +58,7 @@ export default class extends Controller {
     return true
   }
 
-  showErrorMessage = (field) => {
+  showErrorState = (field) => {
     const errorMessage = field.dataset.errorMessage
     const errorElement = document.createElement('div')
     errorElement.classList.add('form__error')
@@ -75,7 +77,7 @@ export default class extends Controller {
   }
 
   onChange = (event) => {
-    const valid = this.validField(event.currentTarget)
+    const valid = this.validField(event.currentTarget, true)
     if (!valid) return
 
     const allValid = Array.from(this.formFields).every((input) =>
