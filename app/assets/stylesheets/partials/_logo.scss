@@ -5,4 +5,17 @@ $logo-font-size: 4vmin;
   font-family: $fat-frank-family;
   font-weight: $font-weight-normal;
   font-style: $font-style-normal;
+  width: fit-content;
+  background: linear-gradient(90deg, $yellow, $green, $blue, $purple, $red);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  &__wrapper {
+    display: grid;
+    align-items: center;
+    height: $header-height;
+    padding: 0 $padding;
+    background-color: $black;
+  }
 }

@@ -21,15 +21,6 @@
   backdrop-filter: blur(3.5px);
 }
 
-.logo {
-  display: grid;
-  align-items: center;
-  height: 100%;
-  color: $white;
-  background-color: $black;
-  padding: 0 $padding;
-}
-
 .blocks {
   display: grid;
   grid-template-columns: repeat(5, 1fr);

@@ -12,9 +12,18 @@
 .tile {
   position: relative;
   padding: 0 0 0 1rem;
-  border-left-width: 1.1rem;
-  border-left-style: solid;
-  padding-bottom: 4em;
+  padding: 0 0 4em 2em;
+
+  &:before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1rem;
+    height: 100%;
+    background-color: $purple;
+  }
 
   p {
     font-size: clamp($base-font-size * 0.75, 2vw, 1.2rem);
@@ -26,23 +35,39 @@
     bottom: 0;
   }
 
-  &--yellow {
-    border-left-color: $yellow;
+  &--synthwave1 {
+    &:before {
+      background: $synthwave1;
+    }
   }
 
-  &--blue {
-    border-left-color: $blue;
+  &--synthwave2 {
+    &:before {
+      background: $synthwave2;
+    }
   }
 
-  &--green {
-    border-left-color: $green;
+  &--synthwave3 {
+    &:before {
+      background: $synthwave3;
+    }
   }
 
-  &--purple {
-    border-left-color: $purple;
+  &--synthwave4 {
+    &:before {
+      background: $synthwave4;
+    }
   }
 
-  &--red {
-    border-left-color: $red;
+  &--synthwave5 {
+    &:before {
+      background: $synthwave5;
+    }
+  }
+
+  &--synthwave6 {
+    &:before {
+      background: $synthwave6;
+    }
   }
 }

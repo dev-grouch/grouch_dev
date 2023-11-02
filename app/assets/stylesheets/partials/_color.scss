@@ -6,7 +6,39 @@ $purple: rebeccapurple;
 $green: #439934;
 $blue: #346499;
 
+$synthwave1: linear-gradient(45deg, $purple, $red);
+$synthwave2: linear-gradient(45deg, $red, $blue);
+$synthwave3: linear-gradient(45deg, $blue, $purple);
+$synthwave4: linear-gradient(45deg, $purple, $green);
+$synthwave5: linear-gradient(45deg, $green, $yellow);
+$synthwave6: linear-gradient(45deg, $yellow, $red);
+$synthwave-all: linear-gradient(90deg, $yellow, $green, $blue, $purple, $red);
+
 .bg {
+  &--synthwave1 {
+    background: $synthwave1;
+  }
+
+  &--synthwave2 {
+    background: $synthwave2;
+  }
+
+  &--synthwave3 {
+    background: $synthwave3;
+  }
+
+  &--synthwave4 {
+    background: $synthwave4;
+  }
+
+  &--synthwave5 {
+    background: $synthwave5;
+  }
+
+  &--synthwave-all {
+    background: $synthwave-all;
+  }
+
   &--yellow {
     background-color: $yellow;
   }
