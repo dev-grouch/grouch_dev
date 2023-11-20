@@ -1,0 +1,12 @@
+.footer {
+  &--primary {
+    padding-top: 1.5em;
+    padding-bottom: 1.8em;
+    border-top: 4px solid $gray;
+
+    p {
+      color: $gray;
+      font-size: clamp($small-font-size, 0.9rem, 0.95rem);
+    }
+  }
+}
