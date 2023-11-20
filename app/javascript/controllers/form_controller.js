@@ -3,10 +3,6 @@ import { Controller } from '@hotwired/stimulus'
 export default class extends Controller {
   static targets = ['form']
 
-  connect() {
-    this.attachChangeListeners()
-  }
-
   get formFields() {
     return this.formTarget.querySelectorAll(
       '.form__field input, .form__field textarea'
@@ -15,15 +11,6 @@ export default class extends Controller {
 
   get submitButton() {
     return this.formTarget.querySelector('input[type="submit"]')
-  }
-
-  // TODO: refactor me
-  attachChangeListeners() {
-    this.formFields.forEach((input) => {
-      input.addEventListener('keyup', this.onChange)
-      input.addEventListener('change', this.onChange)
-      input.addEventListener('focus', this.onChange)
-    })
   }
 
   disableSubmitButton() {

@@ -15,7 +15,6 @@ class ContactForm
   def call
     if valid?
       ContactMailerService.new(self).call
-      true
     else
       false
     end

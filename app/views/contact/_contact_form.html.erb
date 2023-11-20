@@ -5,15 +5,15 @@
       } do |form| %>
     <div class="form__field">
       <%= form.label :name, class: "label form__label" %>
-      <%= form.text_field :name, class: "input input--text form__input--text", required: true, data: { error_message: "required" } %>
+      <%= form.text_field :name, class: "input input--text form__input--text", required: true, data: { action: "input->form#onChange", error_message: "required" } %>
     </div>
     <div class="form__field">
       <%= form.label :email, class: "label form__label" %>
-      <%= form.email_field :email, class: "input input--text form__input--text", required: true, data: { error_message: "We need a valid email here :)" } %>
+      <%= form.email_field :email, class: "input input--text form__input--text", required: true, data: { action: "input->form#onChange", error_message: "We need a valid email here :)" } %>
     </div>
     <div class="form__field">
       <%= form.label :message, class: "label form__label" %>
-      <%= form.text_area :message, class: "input input--textarea form__input--textarea", required: true, data: { error_message: "required" } %>
+      <%= form.text_area :message, class: "input input--textarea form__input--textarea", required: true, data: { action: "input->form#onChange", error_message: "required" } %>
     </div>
     <div class="form__actions">
       <%= form.submit "Send", class: "button button--primary form__button", disabled: true %>
